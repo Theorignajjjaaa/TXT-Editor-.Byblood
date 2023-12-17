@@ -78,7 +78,9 @@ header {
 .TextEDIT {
     background-color: red;
     height: 20px;
-    border:solid 0px 0px 2px 3px;
+    border-left: solid darkred;
+    border-top: solid darkred;
+
 }
 
 
