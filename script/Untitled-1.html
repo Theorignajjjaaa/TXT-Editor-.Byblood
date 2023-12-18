@@ -1,20 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiline Input Download</title>
+</head>
 <body>
-   <h2> Create a text file and save it to a local computer using JavaScript. </h2>
-   <p> Enter the file content:- </p>
-   <textarea> </textarea>
-   <br/>
-   <button onclick = "downloadFile()"> save File </button>
-   <script>
-      const downloadFile = () => {
-         const link = document.createElement("a");
-         const content = document.querySelector("textarea").value;
-         const file = new Blob([content], { type: 'text/plain' });
-         link.href = URL.createObjectURL(file);
-         link.download = "sample.txt";
-         link.click();
-         URL.revokeObjectURL(link.href);
-      };
-   </script>
+
+    <h1>Multiline Input Download</h1>
+
+    <div id="multilineInput" contenteditable="true" style="border: 1px solid #ccc; padding: 5px;" rows="4" cols="50"></div>
+
+    <br>
+
+    <button onclick="downloadText()">Download Text</button>
+
+    <script>
+        function downloadText() {
+            // Get the content from the contenteditable div
+            var textToDownload = document.getElementById('multilineInput').innerText;
+
+            // Create a Blob containing the text
+            var blob = new Blob([textToDownload], { type: 'text/plain' });
+
+            // Create a link element
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+
+            // Set the download attribute with a suggested filename
+            a.download = 'multiline_text.txt';
+
+            // Append the link to the body
+            document.body.appendChild(a);
+
+            // Trigger a click event on the link to initiate the download
+            a.click();
+
+            // Remove the link from the DOM
+            document.body.removeChild(a);
+        }
+    </script>
+
 </body>
 </html>
