@@ -77,10 +77,24 @@ header {
 
 .TextEDIT {
     background-color: red;
-    height: 20px;
+    height: 30px;
     border-left: solid darkred;
     border-top: solid darkred;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+}
+.TextEDIT .comand_Box{
+    padding: 0px 4px ;
+    height: 20px;
+    width: 240px;
+}
+
+.TextEDIT .comand_Box:focus{
+    outline: red;
+    text-align: left;
+    place-content: none;
 }
 
 
