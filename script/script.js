@@ -18,8 +18,7 @@ const downloadFile = () => {
     } else if (person == null) {
         return;
     }
-    
-    
+    //rest//
     alert("File  Title( "+person+ " ) Downloaded");
     const link = document.createElement("a");
     let content = document.querySelector('.read').innerText;
@@ -31,3 +30,9 @@ const downloadFile = () => {
     URL.revokeObjectURL(link.href);
 };
 
+document.addEventListener('keyup', (event) => {
+    var name = event.key;
+    if (name === '/') {
+        document.querySelector('.comand_Box').focus();
+    }
+  }, false);
