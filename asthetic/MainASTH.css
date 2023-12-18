@@ -78,7 +78,6 @@ header {
 .TextEDIT {
     background-color: red;
     height: 30px;
-    border-left: solid darkred;
     border-top: solid darkred;
     display: flex;
     align-items: center;
