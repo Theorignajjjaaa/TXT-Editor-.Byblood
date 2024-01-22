@@ -13,17 +13,20 @@ Comand_Dox.addEventListener('keyup', (event) => {
             downloadFile();
         }
         else if (Comand_IN === ""){
-            alert("No Comand")
+            alert("No Comand");
         }
         else if (Comand_IN === "clear"){
             alert("Clear Comand Exicuted");
             clear();
         }
         else if (Comand_IN === "new"){
-            alert("New Comand Exicuted")
+            alert("New Comand Exicuted");
         }
-        else if (Comand_IN.startsWith("c")){
-            alert("Color Comand Exicuted")
+        else if (Comand_IN === "Lock"){
+            alert("Lock Comand Exicuted");
+        }
+        else if (Comand_IN.startsWith("col ")){
+            alert("Color Comand Exicuted");
         }
         else{"Invalid Command"};
 
